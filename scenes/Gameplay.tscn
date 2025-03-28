@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://epxi06rug1c8"]
+[gd_scene load_steps=13 format=3 uid="uid://epxi06rug1c8"]
 
 [ext_resource type="Script" path="res://gameplay.gd" id="1_qbue0"]
 [ext_resource type="Texture2D" uid="uid://c6pscuteyf3g3" path="res://assets/Без названия505_20250328132334.png" id="2_jil4t"]
 [ext_resource type="Texture2D" uid="uid://bqsheeq4iq3rd" path="res://assets/Без названия505_20250328132342.png" id="3_8pghu"]
 [ext_resource type="Texture2D" uid="uid://c0dawlj3hkdjr" path="res://assets/Без названия505_20250328132549.png" id="4_xpqau"]
 [ext_resource type="Texture2D" uid="uid://dhs6b2rooq1rn" path="res://assets/Без названия505_20250328132600.png" id="5_r37i3"]
+[ext_resource type="Texture2D" uid="uid://bmfr2b80puvep" path="res://assets/Без названия507_20250328153424.png" id="6_p260l"]
 [ext_resource type="Texture2D" uid="uid://cvrwnbj5o2cmt" path="res://assets/Без названия505_20250328132614.png" id="6_t7uw7"]
 [ext_resource type="Texture2D" uid="uid://jamcjen8wfv6" path="res://assets/Без названия505_20250328133439.png" id="6_xlsmd"]
 [ext_resource type="Texture2D" uid="uid://mwe3um4hdoso" path="res://assets/Без названия505_20250328133448.png" id="7_rqvg5"]
@@ -33,19 +34,45 @@ position = Vector2(1085.5, -0.616567)
 scale = Vector2(1.33219, 1.33219)
 texture = ExtResource("5_r37i3")
 
-[node name="slotA" type="Sprite2D" parent="InventoryBG"]
-position = Vector2(-10.1337, -401.882)
-scale = Vector2(0.514864, 0.514864)
+[node name="emptySlotA" type="Sprite2D" parent="InventoryBG"]
+position = Vector2(-8.63257, -418.396)
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("6_p260l")
+metadata/_edit_group_ = true
+
+[node name="slotA" type="Sprite2D" parent="InventoryBG/emptySlotA"]
+position = Vector2(-2.91479, -2.9151)
+scale = Vector2(0.999736, 0.999736)
 texture = ExtResource("6_xlsmd")
 
-[node name="slotB" type="Sprite2D" parent="InventoryBG"]
-position = Vector2(-8.63239, -236.74)
+[node name="emptySlotB" type="Sprite2D" parent="InventoryBG"]
+position = Vector2(-8.63263, -268.267)
 scale = Vector2(0.515, 0.515)
+texture = ExtResource("6_p260l")
+metadata/_edit_group_ = true
+
+[node name="slotB" type="Sprite2D" parent="InventoryBG/emptySlotB"]
+position = Vector2(0.000488281, -5.83026)
 texture = ExtResource("7_rqvg5")
 
-[node name="slotC" type="Sprite2D" parent="InventoryBG"]
-position = Vector2(-8.63239, -65.5937)
+[node name="emptySlotC" type="Sprite2D" parent="InventoryBG"]
+position = Vector2(-8.63257, -118.139)
 scale = Vector2(0.515, 0.515)
+texture = ExtResource("6_p260l")
+metadata/_edit_group_ = true
+
+[node name="slotC" type="Sprite2D" parent="InventoryBG/emptySlotC"]
+position = Vector2(0.000366211, -1.45759)
+texture = ExtResource("8_ws0m6")
+
+[node name="emptySlotD" type="Sprite2D" parent="InventoryBG"]
+position = Vector2(-8.63257, 31.9898)
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("6_p260l")
+metadata/_edit_group_ = true
+
+[node name="slotD" type="Sprite2D" parent="InventoryBG/emptySlotD"]
+position = Vector2(0.000366211, -1.45759)
 texture = ExtResource("8_ws0m6")
 
 [node name="SettingsOrPause" type="Sprite2D" parent="."]
