@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=3 uid="uid://epxi06rug1c8"]
+
+[ext_resource type="Script" path="res://scripts/gameplay.gd" id="1_qbue0"]
+[ext_resource type="Texture2D" path="res://assets/Без названия505_20250328132334.png" id="2_jil4t"]
+[ext_resource type="Texture2D" path="res://assets/Без названия505_20250328132342.png" id="3_8pghu"]
+[ext_resource type="Texture2D" path="res://assets/Без названия505_20250328132549.png" id="4_xpqau"]
+[ext_resource type="Texture2D" path="res://assets/Без названия505_20250328132600.png" id="5_r37i3"]
+[ext_resource type="Texture2D" path="res://assets/Без названия505_20250328132614.png" id="6_t7uw7"]
+[ext_resource type="Texture2D" path="res://assets/Без названия505_20250328133439.png" id="6_xlsmd"]
+[ext_resource type="Texture2D" path="res://assets/Без названия505_20250328133448.png" id="7_rqvg5"]
+[ext_resource type="Texture2D" path="res://assets/Без названия505_20250328133458.png" id="8_ws0m6"]
+[ext_resource type="Texture2D" path="res://assets/Без названия505_20250328132609.png" id="10_hlwuj"]
+[ext_resource type="Texture2D" path="res://assets/Без названия505_20250328132604.png" id="11_wywar"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_qbue0")
+
+[node name="GameBG" type="Sprite2D" parent="."]
+scale = Vector2(1.33333, 1.33333)
+texture = ExtResource("2_jil4t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Leech" type="Sprite2D" parent="."]
+texture = ExtResource("3_8pghu")
+
+[node name="CRAFT" type="Sprite2D" parent="."]
+position = Vector2(-1058, 589)
+texture = ExtResource("4_xpqau")
+
+[node name="InventoryBG" type="Sprite2D" parent="."]
+position = Vector2(1085.5, -0.616567)
+scale = Vector2(1.33219, 1.33219)
+texture = ExtResource("5_r37i3")
+
+[node name="slotA" type="Sprite2D" parent="InventoryBG"]
+position = Vector2(-10.1337, -401.882)
+scale = Vector2(0.514864, 0.514864)
+texture = ExtResource("6_xlsmd")
+
+[node name="slotB" type="Sprite2D" parent="InventoryBG"]
+position = Vector2(-8.63239, -236.74)
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("7_rqvg5")
+
+[node name="slotC" type="Sprite2D" parent="InventoryBG"]
+position = Vector2(-8.63239, -65.5937)
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("8_ws0m6")
+
+[node name="SettingsOrPause" type="Sprite2D" parent="."]
+position = Vector2(-1151, -627)
+texture = ExtResource("6_t7uw7")
+
+[node name="BowToggle" type="Sprite2D" parent="."]
+position = Vector2(-1134, -332)
+texture = ExtResource("10_hlwuj")
+
+[node name="Bow" type="Sprite2D" parent="BowToggle"]
+position = Vector2(909, 239)
+texture = ExtResource("11_wywar")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://banb61gpuqmm0"
-path="res://.godot/imported/backorund.png-a9996574994517daa45d3392b3e3f924.ctex"
+path="res://.godot/imported/backorund.png-f0dca97a81b555cf1d578dc093cdfb49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backorund.png"
-dest_files=["res://.godot/imported/backorund.png-a9996574994517daa45d3392b3e3f924.ctex"]
+source_file="res://backorund.png"
+dest_files=["res://.godot/imported/backorund.png-f0dca97a81b555cf1d578dc093cdfb49.ctex"]
 
 [params]
 
