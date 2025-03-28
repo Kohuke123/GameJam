@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnv61qhqiwphm"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_0wf1w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2b5h4"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0wf1w")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1283.0
+offset_top = -724.0
+offset_right = 1283.0
+offset_bottom = 724.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2b5h4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1825.0
+offset_top = 813.0
+offset_right = 2452.0
+offset_bottom = 1314.0
+
+[node name="start_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "START"
+
+[node name="exit_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "EXIT
+"
+
+[connection signal="pressed" from="VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
