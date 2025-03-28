@@ -1,8 +1,18 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://dnv61qhqiwphm"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_0wf1w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2b5h4"]
+=======
+[gd_scene load_steps=4 format=3 uid="uid://bsawoxyllujtn"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_0wf1w"]
+[ext_resource type="Texture2D" uid="uid://banb61gpuqmm0" path="res://assets/backorund.png" id="2_xeu3x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2b5h4"]
+texture = ExtResource("2_xeu3x")
+>>>>>>> Stashed changes
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
