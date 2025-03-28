@@ -1,8 +1,11 @@
 extends Node2D
 
+var craft_window
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	craft_window = $AlchemyWindow
+	craft_window.visible = false
 	get_window().set_size(Vector2(16*50, 9*50))
 	 
 	var posCenter = Vector2()
@@ -11,4 +14,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if GlobalVariables.craftEnable == true and $CRAFT.disabled == true:
+		$CRAFT.disabled = false
+
+
+func _on_craft_pressed() -> void:
+	if GlobalVariables.craftEnable == true:
+		craft_window.visible = true
+		print("alchemy shown")
+		$CRAFT.disabled = true
+		GlobalVariables.craftEnable = false
