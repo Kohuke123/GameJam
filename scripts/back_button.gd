@@ -1,3 +1,0 @@
-extends TextureButton
-
-signal enable_craft_button

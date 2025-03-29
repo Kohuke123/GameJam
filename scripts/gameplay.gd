@@ -5,11 +5,6 @@ var craft_window
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	craft_window = $AlchemyWindow
-	craft_window.visible = false
-	get_window().set_size(Vector2(16*50, 9*50))
-	 
-	var posCenter = Vector2()
-	DisplayServer.window_set_position( (Vector2i(DisplayServer.screen_get_size()) - Vector2i(DisplayServer.window_get_size_with_decorations())) / 2)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,3 +19,23 @@ func _on_craft_pressed() -> void:
 		print("alchemy shown")
 		$CRAFT.disabled = true
 		GlobalVariables.craftEnable = false
+
+
+func _on_bow_toggle_pressed() -> void:
+	if $Bow.visible == true:
+		$Bow.visible = false
+	else:
+		$Bow.visible = true
+	print("tie visibility toggled")
+
+
+func _on_settings_or_pause_pressed() -> void:
+	print("paused")
+	$PauseUI.visible = true
+	get_tree().paused = true
+
+
+func _on_pause_ui_resume_prompt() -> void:
+	print("resumed")
+	$PauseUI.visible = false
+	get_tree().paused = false

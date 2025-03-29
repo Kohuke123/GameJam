@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://7idiellaposb"]
+
+[ext_resource type="Script" path="res://scripts/pause_ui.gd" id="1_loieu"]
+
+[sub_resource type="SystemFont" id="SystemFont_lkkdr"]
+
+[sub_resource type="Theme" id="Theme_xts14"]
+default_font = SubResource("SystemFont_lkkdr")
+default_font_size = 200
+
+[node name="PauseUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_loieu")
+
+[node name="Label" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -28366.0
+offset_top = -21897.0
+offset_right = -11063.0
+offset_bottom = 2740.0
+scale = Vector2(3.23144, 2.02208)
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -264.0
+offset_top = -465.0
+offset_right = 264.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 200
+text = "EXIT"
+
+[node name="Resume" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -449.0
+offset_top = -889.0
+offset_right = 449.0
+offset_bottom = -592.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 200
+text = "RESUME"
+
+[node name="PausedText" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -357.0
+offset_top = -1328.0
+offset_right = 357.0
+offset_bottom = -898.0
+grow_horizontal = 2
+theme = SubResource("Theme_xts14")
+text = "Paused"
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]

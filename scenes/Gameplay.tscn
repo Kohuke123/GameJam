@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://epxi06rug1c8"]
+[gd_scene load_steps=24 format=3 uid="uid://epxi06rug1c8"]
 
 [ext_resource type="Script" path="res://scripts/gameplay.gd" id="1_vfc4k"]
 [ext_resource type="Texture2D" uid="uid://c6pscuteyf3g3" path="res://assets/Без названия505_20250328132334.png" id="2_jil4t"]
@@ -17,7 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://daa8bxuid6v2t" path="res://assets/Без названия507_20250328151815.png" id="11_kd0yo"]
 [ext_resource type="Texture2D" uid="uid://cli72j16gxh1h" path="res://assets/Без названия505_20250328132604.png" id="11_wywar"]
 [ext_resource type="Texture2D" uid="uid://dipe3b80jp5kw" path="res://assets/Без названия507_20250328151819.png" id="12_cikdo"]
+[ext_resource type="Texture2D" uid="uid://67a31jba3pq0" path="res://assets/cogPressed.png" id="16_qx4ta"]
+[ext_resource type="Texture2D" uid="uid://0qeaqnyit4o8" path="res://assets/cogHover.png" id="17_3iiyy"]
 [ext_resource type="PackedScene" uid="uid://cn515bw4u5tsq" path="res://scenes/alchemy_window.tscn" id="17_dsf33"]
+[ext_resource type="Texture2D" uid="uid://5nvna0lynrve" path="res://assets/bowPressed.png" id="18_2vu3h"]
+[ext_resource type="Texture2D" uid="uid://cighrnpshwerq" path="res://assets/bowHover.png" id="19_prowe"]
+[ext_resource type="PackedScene" uid="uid://7idiellaposb" path="res://scenes/pause_ui.tscn" id="23_gvnsq"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vfc4k")
@@ -32,6 +37,7 @@ texture = ExtResource("2_jil4t")
 texture = ExtResource("3_8pghu")
 
 [node name="CRAFT" type="TextureButton" parent="."]
+process_mode = 1
 offset_left = -1280.0
 offset_top = 458.0
 offset_right = -836.0
@@ -42,6 +48,7 @@ texture_hover = ExtResource("5_42jlh")
 texture_disabled = ExtResource("4_xpqau")
 
 [node name="InventoryBG" type="Sprite2D" parent="."]
+process_mode = 1
 position = Vector2(1085.5, -0.616567)
 scale = Vector2(1.33219, 1.33219)
 texture = ExtResource("5_r37i3")
@@ -107,19 +114,32 @@ metadata/_edit_group_ = true
 position = Vector2(0.000366211, -1.45759)
 texture = ExtResource("12_cikdo")
 
-[node name="SettingsOrPause" type="Sprite2D" parent="."]
-position = Vector2(-1151, -627)
-texture = ExtResource("6_t7uw7")
+[node name="SettingsOrPause" type="TextureButton" parent="."]
+process_mode = 1
+offset_left = -1280.0
+offset_top = -720.0
+offset_right = -1022.0
+offset_bottom = -534.0
+texture_normal = ExtResource("6_t7uw7")
+texture_pressed = ExtResource("16_qx4ta")
+texture_hover = ExtResource("17_3iiyy")
 
-[node name="BowToggle" type="Sprite2D" parent="."]
-position = Vector2(-1134, -332)
-texture = ExtResource("10_hlwuj")
-
-[node name="Bow" type="Sprite2D" parent="BowToggle"]
-position = Vector2(909, 239)
+[node name="Bow" type="Sprite2D" parent="."]
+position = Vector2(-225, -93)
 texture = ExtResource("11_wywar")
 
+[node name="BowToggle" type="TextureButton" parent="."]
+process_mode = 1
+offset_left = -1283.0
+offset_top = -502.0
+offset_right = -994.0
+offset_bottom = -191.0
+texture_normal = ExtResource("10_hlwuj")
+texture_pressed = ExtResource("18_2vu3h")
+texture_hover = ExtResource("19_prowe")
+
 [node name="AlchemyWindow" parent="." instance=ExtResource("17_dsf33")]
+visible = false
 offset_left = -652.0
 offset_top = -360.0
 offset_right = -652.0
@@ -128,4 +148,13 @@ scale = Vector2(1.01054, 0.954344)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="PauseUI" parent="." instance=ExtResource("23_gvnsq")]
+process_mode = 3
+visible = false
+offset_top = 728.0
+offset_bottom = 728.0
+
 [connection signal="pressed" from="CRAFT" to="." method="_on_craft_pressed"]
+[connection signal="pressed" from="SettingsOrPause" to="." method="_on_settings_or_pause_pressed"]
+[connection signal="pressed" from="BowToggle" to="." method="_on_bow_toggle_pressed"]
+[connection signal="resume_prompt" from="PauseUI" to="." method="_on_pause_ui_resume_prompt"]

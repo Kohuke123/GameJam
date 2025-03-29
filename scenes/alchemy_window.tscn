@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cn515bw4u5tsq"]
+[gd_scene load_steps=11 format=3 uid="uid://cn515bw4u5tsq"]
 
 [ext_resource type="Script" path="res://scripts/alchemy_window.gd" id="1_qbr8j"]
 [ext_resource type="Texture2D" uid="uid://d2w4ndrs6whw4" path="res://assets/photo_2025-03-28_13-37-05.jpg" id="1_t01k8"]
 [ext_resource type="Texture2D" uid="uid://mscle020gyji" path="res://assets/Без названия505_20250328133709.png" id="2_ru1yd"]
 [ext_resource type="Texture2D" uid="uid://bxbapyapv56l0" path="res://assets/Без названия505_20250328142545 (2).png" id="3_bbntn"]
-[ext_resource type="Script" path="res://scripts/back_button.gd" id="4_4163t"]
 [ext_resource type="Texture2D" uid="uid://5p4ndj455fdy" path="res://assets/backPressed.png" id="4_kge4m"]
 [ext_resource type="Texture2D" uid="uid://mwe3um4hdoso" path="res://assets/Без названия505_20250328133448.png" id="4_oaihe"]
 [ext_resource type="Texture2D" uid="uid://dstnuwdf3qfmi" path="res://assets/backHover.png" id="5_2jbkv"]
@@ -36,7 +35,6 @@ texture_pressed = ExtResource("4_kge4m")
 texture_hover = ExtResource("5_2jbkv")
 texture_disabled = ExtResource("2_ru1yd")
 flip_h = true
-script = ExtResource("4_4163t")
 
 [node name="ConfirmCraftButton" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
